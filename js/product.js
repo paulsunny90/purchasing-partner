@@ -41,7 +41,7 @@ async function fetchProductDetails() {
             <div class="flex items-center justify-center gap-15 font-bold text-white p-8">
                 <div class=" flex items-center justify-center  border w-50 h-10 gap-2">
                     <img src="/images/add_shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="">
-                    <a href="/pages/cart.html"><button id="addto"> ADD TO CART</button></a>
+                    <button id="addto"> ADD TO CART</button>
                      
                 </div>
                 <button class=" border-2 w-50 h-10">ORDER NOW </button>
@@ -84,6 +84,16 @@ async function fetchProductDetails() {
               mainImg.src=this.src;
             })
         })
+        document.getElementById("addto").addEventListener("click",()=>{
+    
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    cartItems.push(data);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    window.location.href="/pages/cart.html";
+    displayCartItems();
+
+
+ })
 
     } catch (err) {
         console.error(err);
@@ -93,7 +103,6 @@ async function fetchProductDetails() {
 fetchProductDetails();
 
  
-
 
 
 
