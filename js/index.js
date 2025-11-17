@@ -74,24 +74,21 @@ searchshow()
 
 function productfiltter(){
     
-    document.getElementById("all").addEventListener("click",( )=>{
-     fetch(`https://dummyjson.com/products/category-list`)
+    fetch(`https://dummyjson.com/products/category-list`)
        .then(res => res.json())
        .then( data =>{
         console.log(data)
          let str=``
          data.forEach((category)=>{
             str+=
-            ` <button class="bg-white" id="fillter" onclick="showitems('${category}')">${category}</button>`
+            ` <button class="bg-white w-35 h-12 rounded-3xl hover:bg-black hover:text-white font-bold " id="fillter" onclick="showitems('${category}')">${category}</button>`
+                 
 
          })
           
         document.getElementById("all-filter").innerHTML=str
        })
-       
-     
-
-    })
+        t
     fetchProductData()
 }
  productfiltter()
