@@ -8,7 +8,7 @@ async function fetchProductDetails() {
         let thumbnailss=``
           data.images.forEach((img,i)=>{
             thumbnailss +=`
-             <img src="${img}" class="w-28 h-28 bg-white hover:border-4 border-blue-500 cursor-pointer" id="img${i}">
+             <img src="${img}" class="w-28 h-28 bg-white hover:border-4 border-blue-500 cursor-pointer max-md:h-20 max-md:w-20 object-contain md:w-20 md:h-20" id="img${i}">
             `
         })
         let reviewHTML=``
@@ -28,17 +28,17 @@ async function fetchProductDetails() {
         
      
      
-        <div class="left bg-gray-900 w-28 h-[1000px] sticky top-30">
+        <div class="left bg-gray-900 w-28 h-[1000px] sticky top-30 md:top-35">
             <div class="grid grid-flow-col grid-rows-4 gap-4 pt-10 pl-3">
               ${thumbnailss}
             </div>
             
         </div>
-        <div class="center bg-gray-900 w-[35%] h-[1000px] flex flex-col items-start justify-start pt-30 border-r-1 border-white pl-5 sticky top-30">
+        <div class="center bg-gray-900 w-[35%] h-[1000px] flex flex-col items-start justify-start pt-30 border-r-1 border-white pl-5 sticky top-30 md:top-35">
 
-            <img src="${data.thumbnail}" alt="" class="bg-white w-[80%] h-[550px] object-contain" id="main-img">
+            <img src="${data.thumbnail}" alt="" class="bg-white w-[80%] h-[550px] object-contain max-md:h-50 max-md:w-50 md:w-50 md:h-50" id="main-img">
                 
-            <div class="flex items-center justify-center gap-15 font-bold text-white p-8">
+            <div class="flex items-center justify-center gap-15 font-bold text-white p-8  max-md:flex-col max-md:gap-5 max-md:p-0 max-md:pt-4 md:p-4 md:gap-5 md:flex-col">
                 <div class=" flex items-center justify-center  border w-50 h-10 gap-2">
                     <img src="/images/add_shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="">
                     <button id="addto"> ADD TO CART</button>
